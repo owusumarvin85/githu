@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>PENTECOST UNIVERSITY UNDERGRADUATE ADMISSION FORM</title>
+</head>
+<body style="margin:3%; background-color:white" >
+
+
+
+
+
+<table border = "" cellspacing = "0" cellpadding = "" width = "100%">
+
+    <form  method ="post" action="form.php">
+  <tr>
+  <td rowspan = "4" width = "15%" align = "center"><img src = "img4.png" style="width: 100%"></td>
+  <td width = "60%"><h1 align = "center" style="background-color: ;">PENTECOST UNIVERSITY</h1></td>
+  <td rowspan = "3" width = "10%" style="text-align: center; background-color: "><i><b>Affix with glue one of the two endorsed photographs here and clip the other on the form</b></i></td>
+  </tr>
+  
+  <tr style="color:black">
+  <td style="font-size:30px" width = "60%" bgcolor = "" align = "center" font size = "20px">PENTECOST UNIVERSITY UNDERGRADUATE ADMISSION FORM</td><br>
+  
+  </tr>
+  
+  <tr>
+  <td><br></td>
+  
+  </tr>
+  
+  <tr>
+  <td colspan = "2">
+    <table border = "1" cellspacing = "0" cellpadding ="0" width = "100%">
+      <tr>
+        <td rowspan = "2" width = "20%" align = "center" style = "font-size:15px; background-color: "><b>PROGRAM<br>APPLIED FOR</td>
+        <td width = "40%" align = "center" style = "font-size:15px; background-color: "><b>1ST CHOICE</td>
+        <td width = "40%" align = "center" style = "font-size:15px;background-color: "><b>2ND CHOICE</td>
+      </tr>
+      <tr>
+        <td style="background-color: "><input type = "text" name = "choice1" style="width: 80%"><b><span style="color: red"><?php echo $choice1Err;?></span> </td>
+        <td style="background-color: "><input type = "text" name = "choice2" style = "width: 80%"><b><span style="color:red"><?php echo $choice2Err;?> </span></td>
+      </tr>
+      
+    </table>
+  </td>
+  </tr>
+  
+</table>
+
+<p style="text-align: center; font-family: sans-serif; font-size: 13px;"><i>(Please tick where appropriate)</i></p>
+
+
+<table border="2px solid black"style="width:100%;background-color: ">
+
+  <tr>
+    <td style="width: 7%"><b>LEVEL APPLIED FOR <td style="width: 8%"><b>LEVEL 100  <input type="checkbox" name="level" value="100">   LEVEL 200 <input type="checkbox" name="level" value="200">   LEVEL 300   <input type="checkbox" name="level" value="300"></b></td>
+    <td style="width: 6%"><b>REGULAR SCHOOL(R/S)<input type="radio" name="r" value="1"></b></td>    
+    <td style="width:3.5%" ><b>WEEKEND SCHOOL(W/S)<input type="radio" name="r" value="2"></b></td>
+  </tr>
+
+</table>
+
+
+<br>
+<table style="width:20%; border:2px solid black; background-color:; color: black;">
+  <tr>
+    <td><b>STUDENT INFORMATION</b></td>
+</tr>
+</table>
+<br>
+
+<table style="width:100%; border:2px solid black; background-color: ">
+  <tr>
+    <td style="width:17%"><b>NAME(in capital)<hr></td>
+    <td colspan="3"><b>SURNAME:  <input type="text" name="surname"><span style="color:red"><?php echo $Err;?></span> </p></td>
+<td style="width: 24%"><b>TITLE  <input type="checkbox" name="title" value="1">MR  <input type="checkbox" name="title" value="2">MRS  <input type="checkbox" name="title" value="3"> MS  <input type="checkbox" name="title" value="4">DR  <input type="checkbox" name="title" value="5">REV</b></td>
+  </tr>
+  <tr>
+    <td><b>FIRST NAME:  <input type="text" name="firstname"><span style="color:red"><?php echo $firstnameErr;?></span></td>
+    <td style="width: 24%"><b>OTHER NAMES: <input type="text" name="othernames"><span style="color:red"><?php echo $othernamesErr;?></span></td>
+  
+  </tr>
+</table>
+<br>
+
+<table style="width:100%; border:2px solid black">
+  <tr>
+    <td style="text-align: center; color: black; background-color:; border:2px; padding: 3px;"><b>Names must correspond exactly with those used for all examinations taken. Provide legal proof of any change name</b></td>
+</tr>
+</table>
+<br>
+
+<table border="2px solid black"style="width:100%; background-color: ">
+  <tr>
+    <td style="width: 15%; border:2px solid black"><b>DATE OF BIRTH:  <input type="date" placeholder="DD/MM/YYYY" style="font-weight: bolder; width: 39%" value="" min="1997-01-01" max="2060-12-31">   <td style="width: 15%; border:2px solid black;"><b>PLACE OF BIRTH:  <input type="text" name="placeofbirth"><span style="color:red"><?php echo $placeofbirthErr;?></span></td>   <td style="border:2px solid black; width: 15%"><b>GENDER  <input type="radio" name="gender" value="1">MALE</b>
+     <input type="radio" name="gender" value="2"><b>FEMALE
+  
+  </tr>
+</table>
+<br>
+<table style="width:100%; border-spacing:12px; background-color: ; border:2px solid black">
+  <tr>
+    <td style="border:1px solid black; width:22%"><b>NATIONALITY:  <input type="text"name="nationality"><span style="color:red"><?php echo $nationalityErr;?></span></td>
+    <td style="border:1px solid black; width:22%"><b>HOMETOWN:<input type="text" name="hometown"><span style="color:red"><?php echo $hometownErr;?></span></td>
+</table> 
+<br>
+<table style="width:100%; border-spacing:12px; background-color: ; border:2px solid black">
+  <tr>
+    <td style="border:1px solid black; width:22%"><b>REGION OF HOMETOWN:<input type="text" name="regionofhometown"><span style="color:red"><?php echo $regionofhometownErr;?></span></td>
+    <td style="border:1px solid black; width:22%"><b>RELIGION: <input type="text" name="religion"><span style="color:red"><?php echo $religionErr;?></span></td>
+</table>
+<br>
+<table border="1px solid black"style="width:100%; background-color: ">
+ <td style="border:1px solid black; width: 15%"><b>MARITAL STATUS</b>  <input type="checkbox">SINGLE
+     <input type="checkbox">MARRIED  <input type="checkbox">DIVORCED</td>
+ </table>
+<br>
+
+<table style="width:100%; border:2px solid black; border-collapse: collapse;">
+
+ 
+  <tr>
+    <th style="background-color: ; border:2px solid black; border-collapse: collapse; text-align: left;"><b>ADDRESS TO WHICH COMMUNICATION IN CONNECTION WITH THIS APPLICATION SHOULD BE SENT</th>
+   
+  </tr>
+  <tr>
+    <td style="padding:8px; background-color: ; border:2px solid black; border-collapse: collapse;"><b><input type="text" name="address"; style="width:50%"><span style="color:red"><?php echo $address1Err;?></span></td>
+   
+  <tr>
+    <td style="padding:8px; background-color: ; border:2px solid black; border-collapse: collapse;"><input type="text"  placeholder="Optional" name="address2"; style="width: 50%"></td>
+   
+  </tr>
+
+</table>
+<br>
+
+  
+<table style="width:100%; border-spacing:12px; background-color: ; border:2px solid black">
+  <tr>
+    <td style="border:1px solid black; width:22%"><b>TELEPHONE NO.: <input type="text" name="telephoneno" style="width: 50%"><span style="color: red"><?php echo $telephonenoErr;?></span></td>
+    <td style="border:1px solid black; width:22%"><b>E-MAIL ADDRESS: <input type="text" name="email" style="width: 50%"><span style="color: red"><?php echo $emailaddressErr;?></span></td>
+</table>
+<br>
+
+
+<table style="width:100%; border:2px solid black">
+  <tr>
+    <td style="text-align: center; color: black; background-color: ; border:2px; padding: 3px;"><b>PERMANENT HOME ADDRESS(IF DIFFERENT FROM ABOVE)</b></td>
+</tr>
+</table>
+<br>
+
+<table style="width:100%;border:1px solid black; border-collapse: collapse; background-color: ;">
+  <tr>
+   
+    <th colspan="2" style="border:1px solid black; border-collapse: collapse;padding: 5px; text-align: left;"><input type="text" style="width:70%"></th>
+  </tr>
+  <tr>
+    <td style="width:50%; border:1px solid black; border-collapse: collapse;"><input type="text" style="width:95%"></td>
+    <td style="padding: 5px; text-align: left;"><b>TELEPHONE NO:<input type="text"></td>
+  </tr>
+</table>
+<br>
+
+<table style="width:100%;border:1px solid black; border-collapse: collapse; background-color: ;">
+  <tr>
+   
+    <th colspan="2" style="border:1px solid black; border-collapse: collapse;padding: 5px; text-align: left;">NAME OF PARENT/GUARDIAN/SPONSOR:<input type="text" style="width:50%"></th>
+  </tr>
+  <tr>
+    <td style="width:50%; border:1px solid black;border-collapse: collapse;"><b>OCCUPATION:</b> <input type="text" style="width:75%"></td>
+    <td style="padding: 5px; text-align: left;"><b>TELEPHONE NO:<input type="text" style="width:50%"></td>
+  </tr>
+</table>
+<br>
+
+<table style="width:100%; border:2px solid black; border-collapse: collapse;">
+
+ 
+  <tr>
+    <td style="padding:8px; background-color: ; border:1px solid black; border-collapse: collapse;"><b>ARE YOU PHYSICALLY CHALLENGED OR DO YOU SUFFER ANY FORM OF CHALLENGE?<input type="checkbox">YES <input type="checkbox">NO</td>
+   
+  <tr>
+    <td style="padding:8px; background-color: ; border:1px solid black; border-collapse: collapse;"><input type="text"; style="width: 50%"></td>
+  </tr>
+</table>
+<br>
+
+<table style="width:100%; border:2px solid black; border-collapse: collapse;">
+
+  <tr>
+    <td style="padding:8px; background-color: ; border:2px solid black; border-collapse: collapse;"><b>ARE YOU CURRENTLY IN EMPLOYMENT<input type="checkbox">YES  <input type="checkbox">NO  IF YES:<input type="text" style="width:40%"></td>
+</tr>
+   
+  <tr>
+    <td style="padding:8px; background-color: ; border:2px solid black; border-collapse: collapse;"><b>INDICATE TYPE/NATURE OF EMPLOYMENT: <input type="text"; style="width: 50%"></td>
+   
+  </tr>
+  <tr>
+    <td style="padding:8px; background-color: ; border:2px solid black; border-collapse: collapse;"><b>NAME AND ADDRESS OF EMPLOYER: <input type="text"; style="width: 50%"></td>
+</tr>
+<tr>
+    <td style="padding:8px; background-color: ; border:2px solid black; border-collapse: collapse;"><input type="text"; style="width: 70%"></td>
+</tr>
+</table>
+<br>
+<br>
+
+<table style="width:20%; border:2px solid black; background-color:; color: black;">
+  <tr>
+    <td><b>EDUCATIONAL BACKGROUND</b></td>
+</tr>
+</table>
+
+
+<table style="width:70%; border-collapse:collapse;">
+  <tr>
+    <th style="padding:6px; border:2px solid black;border-collapse: collapse; background-color:"><b>SCHOOLS ATTENDED WITH DATES</th>
+<br>
+        
+    
+  </tr>
+  <tr>
+    <th style="border:2px solid black; background-color: "><b>NAME OF SCHOOL</th>
+    <th style="border:2px solid black; background-color: "><b>DATES ATTENDED</th>    
+    <th style="border:2px solid black; background-color: "><b>QUALIFICATION OBTAINED</th>
+  </tr>
+
+  <tr style="background-color: ">
+    <td style="border:2px solid black"><b>1)<input type="text" style="width: 85%"></td>
+    <td style="border:2px solid black"><input type="text" style="width: 95%"></td>    
+    <td style="border:2px solid black"><input type="text" style="width: 95%"></td>
+  </tr>
+  <tr style="background-color: ">
+    <td style="border:2px solid black"><b>2)<input type="text" style="width: 85%"></td>
+    <td style="border:2px solid black"><input type="text" style="width: 95%"></td>    
+    <td style="border:2px solid black"><input type="text" style="width: 95%"></td>
+  </tr>
+
+  <tr style="background-color:">
+    <td style="border:2px solid black">3)<input type="text" style="width: 85%"></td>
+    <td style="border:2px solid black"><input type="text" style="width: 95%"></td>    
+    <td style="border:2px solid black"><input type="text" style="width: 95%"></td>
+  </tr>
+
+  <tr style="background-color:">
+    <td style="border:2px solid black">4)<input type="text" style="width: 85%"></td>
+    <td style="border:2px solid black"><input type="text" style="width: 95%"></td>    
+    <td style="border:2px solid black"><input type="text" style="width: 95%"></td>
+  </tr>
+ <tr style="background-color: ">
+    <td style="border:2px solid black">5)<input type="text" style="width: 85%"></td>
+    <td style="border:2px solid black"><input type="text" style="width: 95%"></td>    
+    <td style="border:2px solid black"><input type="text" style="width: 95%"></td>
+  </tr>
+</table>
+<br>
+
+<table style="width:20%; border:2px solid black; background-color:; color: black;">
+  <tr>
+    <td><b>EXAMINATION DETAILS</b></td>
+</tr> 
+</table>
+<br>
+
+<table style="width:100%; border:2px solid black; border-collapse:collapse;background-color: ">
+  <tr style="border:1px solid black">
+    <th style="border:1px solid black; border-collapse:collapse; padding:5px">WASSCE</th>
+    <th style="border:1px solid black; border-collapse:collapse;padding:5px">1<sup>ST</sup> SITTING</th>    
+    <th style="border:1px solid black; border-collapse:collapse">2<sup>ND</sup>SITTING</th>
+<th style="padding:5px">3<sup>RD</sup>SITTNG</th>
+  </tr>
+  <tr style="border:1px solid black">
+    <th style="border:1px solid black">INDEX NUMBER</th>
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+  <tr style="border:1px solid black">
+    <th style="border:1px solid black">YEAR</th>
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+  <tr style="border:1px solid black">
+    <th style="border:1px solid black">MONTH</th>
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+  <tr style="border:1px solid black">
+    <th style="border:1px solid black">CORE ENGLISH</th>
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+  <tr style="border:1px solid black">
+    <th style="border:1px solid black">CORE MATHEMATICS</th>
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+ <tr style="border:1px solid black">
+    <th style="border:1px solid black">CORE/INTEGRATED SCIENCE</th>
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+ <tr style="border:1px solid black">
+    <th style="border:1px solid black">CORE SOCIAL STUDIES</th>
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+ <tr style="border:1px solid black">
+    <th style="border:1px solid black">ELECTIVE:
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+ <tr style="border:1px solid black">
+    <th style="border:1px solid black">ELECTIVE: 
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+ <tr style="border:1px solid black">
+    <th style="border:1px solid black">ELECTIVE: 
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+ <tr style="border:1px solid black">
+    <th style="border:1px solid black">ELECTIVE: 
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+ <tr style="border:1px solid black">
+    <th style="border:1px solid black">ELECTIVE: 
+    <td style="border:1px solid black"><input type="text"></td>   
+    <td style="padding:5px"><input type="text"></td>
+<td style="border:1px solid black"><input type="text"></td>
+  </tr>
+</table>
+<br>
+
+
+<BR>
+
+<br>
+<input type="submit" name="submit" style="background-color: ; border:2px solid ; color: black; width: 10%; border-radius: 5px; padding:12px; cursor: pointer; font-weight: bolder; font-size: 25px;" value="submit">
+</form>
+
+</body>
+</html>
