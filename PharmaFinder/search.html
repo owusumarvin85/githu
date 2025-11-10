@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Pharmacies</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>PharmaFinder</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="#">Emergency</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Find a Pharmacy</h2>
+      <p>Filter by illness, distance or open hours</p>
+
+      <form id="search-form">
+        <input type="text" id="illness" placeholder="Enter illness (e.g. cold, malaria)" />
+        <select id="distance">
+          <option value="">Distance</option>
+          <option value="1">Within 1km</option>
+          <option value="5">Within 5km</option>
+          <option value="10">Within 10km</option>
+        </select>
+        <select id="openNow">
+          <option value="">Open Status</option>
+          <option value="yes">Open Now</option>
+          <option value="no">Closed</option>
+        </select>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="featured">
+    <h3>Search Results</h3>
+    <div class="pharmacy-grid" id="results">
+      <!-- Results will be displayed here -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 PharmaFinder. All rights reserved.</p>
+  </footer>
+
+  <script src="search.js"></script>
+</body>
+</html>

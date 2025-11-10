@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Find Pharmacy | PharmaFinder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">PharmaFinder</div>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="find.html" class="active">Find Pharmacy</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="search-section container">
+    <h2>Search Nearby Pharmacies</h2>
+    <form class="search-form">
+      <input type="text" placeholder="Enter illness or medication..." />
+      <select>
+        <option value="all">All Pharmacies</option>
+        <option value="open">Open Now</option>
+        <option value="emergency">Emergency Delivery</option>
+        <option value="featured">Featured</option>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+    <div class="suggestions"></div> <!-- Suggestions box for live search -->
+  </section>
+
+  <section class="pharmacy-list container">
+    <h3>Featured Pharmacies</h3>
+
+    <div class="pharmacy-card">
+      <img src="image/pharmacyA.jpg" alt="HealthPlus Pharmacy" />
+      <div>
+        <h4>HealthPlus Pharmacy</h4>
+        <p>Location: University of Ghana Campus</p>
+        <p>Hours: 8am - 10pm</p>
+        <p>Available: Paracetamol, Vitamin C, Ibuprofen</p>
+        <p><strong>Emergency Delivery:</strong> ✅</p>
+      </div>
+    </div>
+
+    <div class="pharmacy-card">
+      <img src="image/pharmacyB.jpg" alt="MediCare" />
+      <div>
+        <h4>MediCare Pharmacy</h4>
+        <p>Location: East Legon</p>
+        <p>Hours: 24/7</p>
+        <p>Available: Malaria Tabs, Thermometers, Zincovit</p>
+        <p><strong>Emergency Delivery:</strong> ✅</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pharmacy-list container">
+    <h3>Nearby Pharmacies</h3>
+
+    <div class="pharmacy-card">
+      <img src="image/pharmacyC.jpg" alt="Silverline Pharmacy" />
+      <div>
+        <h4>Silverline Pharmacy</h4>
+        <p>Location: Madina Zongo Junction</p>
+        <p>Hours: 9am - 9pm</p>
+        <p>Available: Cough Syrup, First Aid, Antiseptics</p>
+        <p><strong>Emergency Delivery:</strong> ❌</p>
+      </div>
+    </div>
+
+    <div class="pharmacy-card">
+      <img src="image/pharmacyD.jpg" alt="HopeMed Pharmacy" />
+      <div>
+        <h4>HopeMed Pharmacy</h4>
+        <p>Location: Legon Boundary Road</p>
+        <p>Hours: 10am - 10pm</p>
+        <p>Available: Blood Pressure Tabs, Pain Relievers</p>
+        <p><strong>Emergency Delivery:</strong> ✅</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h3>Map Preview</h3>
+    <div style="width: 100%; height: 300px; background: #e0e0e0; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+      <p style="color: #666;">[Google Maps integration coming soon]</p>
+    </div>
+  </section>
+
+  <script>
+    const pharmacies = [
+      {
+        name: "HealthPlus Pharmacy",
+        location: "University of Ghana Campus",
+        hours: "8am - 10pm",
+        available: ["Paracetamol", "Vitamin C", "Ibuprofen"],
+        emergency: true,
+        featured: true
+      },
+      {
+        name: "MediCare Pharmacy",
+        location: "East Legon",
+        hours: "24/7",
+        available: ["Malaria Tabs", "Thermometers", "Zincovit"],
+        emergency: true,
+        featured: true
+      },
+      {
+        name: "Silverline Pharmacy",
+        location: "Madina Zongo Junction",
+        hours: "9am - 9pm",
+        available: ["Cough Syrup", "First Aid", "Antiseptics"],
+        emergency: false,
+        featured: false
+      },
+      {
+        name: "HopeMed Pharmacy",
+        location: "Legon Boundary Road",
+        hours: "10am - 10pm",
+        available: ["Blood Pressure Tabs", "Pain Relievers"],
+        emergency: true,
+        featured: false
+      }
+    ];
+    
+    const searchInput = document.querySelector(".search-form input");
+    const categorySelect = document.querySelector(".search-form select");
+    const searchForm = document.querySelector(".search-form");
+    const suggestionsBox = document.querySelector(".suggestions");
+    const resultContainer = document.querySelector(".pharmacy-list");
+    
+    // Live Suggestions
+    searchInput.addEventListener("input", () => {
+      const keyword = searchInput.value.toLowerCase();
+      if (!keyword) {
+        suggestionsBox.innerHTML = "";
+        return;
+      }
+    
+      const matches = pharmacies.filter(p =>
+        p.name.toLowerCase().includes(keyword) ||
+        p.location.toLowerCase().includes(keyword) ||
+        p.available.some(med => med.toLowerCase().includes(keyword))
+      );
+    
+      suggestionsBox.innerHTML = matches.map(p => `<div class="suggestion-item">${p.name}</div>`).join("");
+    
+      document.querySelectorAll(".suggestion-item").forEach(item => {
+        item.onclick = () => {
+          searchInput.value = item.textContent;
+          suggestionsBox.innerHTML = "";
+        };
+      });
+    });
+    
+    // Search Filtering
+    searchForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const keyword = searchInput.value.toLowerCase();
+      const category = categorySelect.value;
+    
+      const filtered = pharmacies.filter(p => {
+        const matchesKeyword =
+          !keyword ||
+          p.name.toLowerCase().includes(keyword) ||
+          p.location.toLowerCase().includes(keyword) ||
+          p.available.some(med => med.toLowerCase().includes(keyword));
+    
+        const matchesCategory = 
+          category === "all" ||
+          (category === "open" && p.hours.includes("24")) ||
+          (category === "emergency" && p.emergency) ||
+          (category === "featured" && p.featured);
+    
+        return matchesKeyword && matchesCategory;
+      });
+    
+      renderResults(filtered);
+    });
+    
+    function renderResults(data) {
+      resultContainer.innerHTML = `<h3>Search Results</h3>`;
+      if (data.length === 0) {
+        resultContainer.innerHTML += `<p>No pharmacies match your search.</p>`;
+        return;
+      }
+    
+      data.forEach(p => {
+        resultContainer.innerHTML += `
+          <div class="pharmacy-card">
+            <img src="image/pharmacyA.jpg" alt="${p.name}" />
+            <div>
+              <h4>${p.name}</h4>
+              <p>Location: ${p.location}</p>
+              <p>Hours: ${p.hours}</p>
+              <p>Available: ${p.available.join(", ")}</p>
+              <p><strong>Emergency Delivery:</strong> ${p.emergency ? "✅" : "❌"}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+  </script>
+  
+  <footer class="footer">
+    <p>&copy; 2025 PharmaFinder. All rights reserved.</p>
+  </footer>
+</body>
+</html>
